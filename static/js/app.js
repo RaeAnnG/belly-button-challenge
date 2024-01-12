@@ -1,47 +1,22 @@
 //Use the D3 Library to read in the samples.json
 const url = "https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json";
-//Set Variables
-//var option = "";
-//var dataSet ;
-//var demo;
 
 // Use init function
 function init() {
 
-    //Use D3 to select the dropdown menu
-    //let dropdownMenu = d3.select("selDataset");
-
     // Use D3 for the dropdown select element
     const selector = d3.select("#selDataset");
-
-    // sampleNames.foreach((sample) => {
-    //     selector
-    //         .append("option")
-    //         ,text(sample)
-    //         .property("value", sample);
-    // });
-
 
 // Fetch the JSON data and fill the select options
 d3.json(url).then((data) => {
     const sampleNames = data.names;
-    //console.log('Data: ${data}');
-
-    //Print the data to the console
-    //console.log(dataSet);
 
     //Set up an array of id names
     let names = data.names;
 
-    //Use for loop to collect sample names
-    // for (const sample of sampleNames) {
-    //     selector.append("option").text(sample).property("value", sample);
-    // }
-
     names.forEach((sample) => {
         //Append each name as an option in the dropdown menu
-        //Add the name to the html file as an option element
-        //dropdownMenu.append("option").text(dname).property("value", dname);
+        //Add the name to the file as an option element
         selector.append("option").text(sample).property("value", sample);
     });
 
@@ -52,8 +27,6 @@ d3.json(url).then((data) => {
     demo(fname);
     bar(fname);
     bubble(fname);
-    // gauge(dname);
-
 
   });
 }
@@ -83,9 +56,6 @@ function bar(selectedvalue) {
             y: object.otu_ids.slice(0,10).map((otu_id) => `OTU ${otu_id}`).reverse(),
             text: object.otu_labels.slice(0,10).reverse(),
             type: "bar",
-            //marker: {
-                //color: "rgb(166,172,237)"
-            //},
             orientation: "h"
         }];
 

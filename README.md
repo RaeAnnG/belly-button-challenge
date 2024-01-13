@@ -1,6 +1,11 @@
 # Module 14 Challenge
 # belly-button-challenge
 -
+Files Provided
+-
+Index - HTML code
+Samples - sample data
+app - JavaScript file for Dashboard
 # Horizontal Bar Chart
 - 
 Created a horizontal bar chart with a dropdown menu to display the top 10 OTUs found in that individual.
